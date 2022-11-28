@@ -1,37 +1,31 @@
-
 variable "region" {
+  type    = string
   default = "us-east-1"
+}
+
+variable "vpc_name" {
   type    = string
+  default = "Project_vpc"
+}
+
+variable "vpc_cidr" {
+  type    = string
+  default = "10.0.0.0/16"
 }
 
 
-
-variable "vpc_public_subnets1" {
-  default = "10.0.101.0/24"
-  type    = string
+variable "private_subnets" {
+  default = {
+    "private_subnet_1" = 1
+    "private_subnet_2" = 2
+    "private_subnet_3" = 3
+  }
 }
 
-variable "vpc_public_subnets2" {
-  default = "10.0.102.0/24"
-  type    = string
-}
-
-variable "vpc_public_subnets3" {
-  default = "10.0.103.0/24"
-  type    = string
-}
-
-variable "vpc_private_subnets1" {
-  default = "10.0.1.0/24"
-  type    = string
-}
-
-variable "vpc_private_subnets2" {
-  default = "10.0.2.0/24"
-  type    = string
-}
-
-variable "vpc_private_subnets3" {
-  default = "10.0.3.0/24"
-  type    = string
+variable "public_subnets" {
+  default = {
+    "public_subnet_1" = 1
+    "public_subnet_2" = 2
+    "public_subnet_3" = 3
+  }
 }
