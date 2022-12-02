@@ -64,7 +64,7 @@ module "asg" {
   instance_type               = "t3.micro"
   ebs_optimized               = false
   enable_monitoring           = false
-  user_data                   = base64encode(data.template_file.user_data.rendered)
+  user_data                   = "IyEvYmluL2Jhc2gKc3VkbyB5dW0gaW5zdGFsbCBodHRwZCAteSAKc3VkbyBzeXN0ZW1jdGwgc3RhcnQgaHR0cGQg"
   target_group_arns           = module.alb.target_group_arns
   security_groups = [
     aws_security_group.allow_tls.id
